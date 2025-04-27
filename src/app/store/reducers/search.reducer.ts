@@ -1,14 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as SearchActions from '../actions/search.actions';
-import { GithubRepository } from '../../models/github-repository.model';
-
-export interface SearchState {
-    repositories: GithubRepository[];
-    loading: boolean;
-    error: string | null;
-    cache: Record<string, GithubRepository[]>;
-    lastQuery: string | null;
-}
+import { SearchState } from './SearchState';
 
 export const initialState: SearchState = {
     repositories: [],

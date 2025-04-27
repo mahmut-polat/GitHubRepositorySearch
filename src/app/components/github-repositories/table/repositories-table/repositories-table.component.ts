@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { GithubRepository } from '../../../../models/github-repository.model';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { GithubRepository } from '../../../../models/github-repository.model';
 
 @Component({
   selector: 'app-repositories-table',
@@ -12,8 +12,9 @@ import { IonicModule } from '@ionic/angular';
 export class RepositoriesTableComponent {
 
   private _repositories: GithubRepository[] = [];
+  private readonly PAGE_SIZE: number = 10;
+
   currentPage: number = 1;
-  pageSize: number = 10;
   sortDirection: 'asc' | 'desc' = 'desc';
 
   @Input()
@@ -32,8 +33,8 @@ export class RepositoriesTableComponent {
       return [];
     }
 
-    const start = (this.currentPage - 1) * this.pageSize;
-    return this.repositories.slice(start, start + this.pageSize);
+    const start = (this.currentPage - 1) * this.PAGE_SIZE;
+    return this.repositories.slice(start, start + this.PAGE_SIZE);
   }
 
   get hasRepositories(): boolean {
@@ -41,7 +42,7 @@ export class RepositoriesTableComponent {
   }
 
   get totalPages(): number {
-    return this.repositories ? Math.ceil(this.repositories.length / this.pageSize) : 0;
+    return this.repositories ? Math.ceil(this.repositories.length / this.PAGE_SIZE) : 0;
   }
 
   previousPage() {

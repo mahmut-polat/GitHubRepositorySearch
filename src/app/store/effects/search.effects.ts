@@ -1,11 +1,11 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { select, Store } from '@ngrx/store';
+import { catchError, map, of, switchMap, withLatestFrom } from 'rxjs';
+import { GithubRepository } from '../../models/github-repository.model';
 import { GitHubService } from '../../services/github.service';
 import * as SearchActions from '../actions/search.actions';
-import { of, catchError, map, switchMap, withLatestFrom } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-import { SearchState } from '../reducers/search.reducer';
-import { GithubRepository } from '../../models/github-repository.model';
+import { SearchState } from '../reducers/SearchState';
 
 @Injectable()
 export class SearchEffects {

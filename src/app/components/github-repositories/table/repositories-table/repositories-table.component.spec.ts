@@ -80,18 +80,16 @@ describe('RepositoriesTableComponent', () => {
   it('should paginate repositories correctly', () => {
     const repos = Array.from({ length: 12 }, (_, i) => createRepo(`Repo ${i}`, i));
     component.repositories = repos;
-    component.pageSize = 5;
     component.currentPage = 2;
 
     const paged = component.pagedRepositories;
-    expect(paged.length).toBe(5);
-    expect(paged[0].name).toBe('Repo 6');
+    expect(paged.length).toBe(2);
+    expect(paged[0].name).toBe('Repo 1');
   });
 
   it('should navigate to next page', () => {
     const repos = Array.from({ length: 15 }, (_, i) => createRepo(`Repo ${i}`, i));
     component.repositories = repos;
-    component.pageSize = 5;
     component.currentPage = 1;
 
     component.nextPage();
@@ -101,7 +99,6 @@ describe('RepositoriesTableComponent', () => {
   it('should navigate to previous page', () => {
     const repos = Array.from({ length: 15 }, (_, i) => createRepo(`Repo ${i}`, i));
     component.repositories = repos;
-    component.pageSize = 5;
     component.currentPage = 2;
 
     component.previousPage();

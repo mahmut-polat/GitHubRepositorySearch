@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { GithubRepository } from '../../models/github-repository.model';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { SearchBarComponent } from './search-bar/search-bar.component';
-import { RepositoriesTableComponent } from './table/repositories-table/repositories-table.component';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { SearchState } from '../../store/reducers/search.reducer';
+import { GithubRepository } from '../../models/github-repository.model';
 import * as SearchActions from '../../store/actions/search.actions';
+import { SearchState } from '../../store/reducers/SearchState';
 import * as SearchSelectors from '../../store/selectors/search.selectors';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { RepositoriesTableComponent } from './table/repositories-table/repositories-table.component';
 
 @Component({
   selector: 'app-github-repositories',

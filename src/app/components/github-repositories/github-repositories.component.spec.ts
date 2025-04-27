@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GithubRepositoriesComponent } from './github-repositories.component';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { SearchState } from '../../store/reducers/search.reducer';
+import { SearchState } from '../../store/reducers/SearchState';
 import * as SearchActions from '../../store/actions/search.actions';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';

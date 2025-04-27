@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
+import { IonicModule } from '@ionic/angular';
 import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-bar',
