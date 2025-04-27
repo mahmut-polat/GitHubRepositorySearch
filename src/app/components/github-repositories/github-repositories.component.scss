@@ -1,0 +1,27 @@
+.table-header {
+    font-weight: bold;
+    background-color: #f4f5f8;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 8px 0;
+  }
+  
+  ion-row {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+  }
+  
+  .no-records {
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 8px;
+  }
+  

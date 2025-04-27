@@ -1,0 +1,41 @@
+<div class="table-container">
+  <ion-grid class="repository-table">
+    <ion-row class="table-header">
+      <ion-col size="2">Repository Name</ion-col>
+      <ion-col size="2">Owner</ion-col>
+      <ion-col size="2">Language</ion-col>
+      <ion-col size="2">
+        <button (click)="sortByStars()" class="sort-button">
+          Stars {{ sortDirection === 'asc' ? '↑' : '↓' }}
+        </button>
+      </ion-col>
+      <ion-col size="2">Created Date</ion-col>
+      <ion-col size="2">Link</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let repo of pagedRepositories; let i = index" [class.even]="i % 2 === 0" [class.odd]="i % 2 !== 0">
+      <ion-col size="2">{{ repo.name }}</ion-col>
+      <ion-col size="2">{{ repo.owner.login }}</ion-col>
+      <ion-col size="2">{{ repo.language || '-' }}</ion-col>
+      <ion-col size="2">{{ repo.stargazers_count | number }}</ion-col>
+      <ion-col size="2">{{ repo.created_at | date:'dd/MM/yyyy' }}</ion-col>
+      <ion-col size="2">
+        <a [href]="repo.html_url" target="_blank" rel="noopener noreferrer">
+          <ion-icon></ion-icon> View
+        </a>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="pagedRepositories.length === 0">
+      <ion-col size="12" class="no-records">
+        No records found
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<div class="pagination-container">
+  <ion-button size="small" (click)="previousPage()" [disabled]="currentPage === 1">Previous</ion-button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <ion-button size="small" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</ion-button>
+</div>

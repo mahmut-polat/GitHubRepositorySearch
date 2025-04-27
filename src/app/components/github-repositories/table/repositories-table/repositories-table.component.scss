@@ -1,0 +1,113 @@
+.repository-table {
+  min-width: 700px;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  ion-row {
+    display: flex;
+    padding: 3px 2px;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .table-header {
+    font-weight: 600;
+    background-color: #f8f9fa;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    ion-col {
+      padding: 12px 8px;
+    }
+  }
+
+  ion-col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .even {
+    background-color: #ffffff;
+  }
+
+  .odd {
+    background-color: #f9f9f9;
+  }
+
+  a {
+    color: #1976d2;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .no-records {
+    text-align: center;
+    padding: 24px;
+    color: #666;
+    font-style: italic;
+    white-space: normal;
+  }
+}
+
+/* Pagination container */
+.pagination-container {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 12px 0;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  z-index: 5;
+
+  ion-button {
+    min-width: 100px;
+    height: 36px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+
+  >span {
+    min-width: 120px;
+    text-align: center;
+  }
+}
+
+.table-container {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  position: relative;
+}
+
+.sort-button {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    color: #1976d2;
+  }
+}

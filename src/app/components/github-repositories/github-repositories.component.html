@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>GitHub Repositories</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+    <ion-spinner *ngIf="(loading$ | async)" name="crescent" style="display: block; margin: 20px auto;"></ion-spinner>
+    <app-repositories-table *ngIf="!(loading$ | async)" [repositories]="(repositories$ | async) ?? []"></app-repositories-table>
+  </ion-content>
+  
