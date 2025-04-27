@@ -2,11 +2,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, of } from 'rxjs';
 import { GithubRepository } from '../models/github-repository.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class GitHubService {
-  private readonly GITHUB_TOKEN = ''; // Add token if needed
-  private readonly BASE_URL = 'https://api.github.com/search/repositories';
+  private readonly BASE_URL = environment.githubApi.baseUrl;
+  private readonly GITHUB_TOKEN = environment.githubApi.token; // Add token if needed
 
   constructor(private http: HttpClient) { }
 
