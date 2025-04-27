@@ -6,7 +6,7 @@ import { GithubRepository } from '../models/github-repository.model';
 
 @Injectable({ providedIn: 'root' })
 export class GitHubService {
-  private readonly GITHUB_TOKEN = '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'; //readonly token
+  private readonly GITHUB_TOKEN = 'PAT'; //readonly token
   private readonly BASE_URL = 'https://api.github.com/search/repositories';
 
   constructor(private http: HttpClient) { }
